@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ $# -gt 1 ]; then
+  mate-terminal -e "${*: 2}"
+else
+  mate-terminal $@
+fi
+
