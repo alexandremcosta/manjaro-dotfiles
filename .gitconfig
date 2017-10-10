@@ -7,6 +7,9 @@
 	name = Alexandre Costa
 	email = alexandremcost@gmail.com
 [alias]
-  ch = checkout
-  st = status
-  lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+	pl = pull --rebase
+	ch = checkout
+	st = status
+	lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+[core]
+	excludesfile = ~/.gitignore
