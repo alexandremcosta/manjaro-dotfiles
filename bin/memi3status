@@ -4,6 +4,7 @@
 i3status | while :
 do
         read line
-	rampercent="$(awk '/MemTotal/ {memtotal=$2}; /MemAvailable/ {memavail=$2}; END { printf("%02.0f", (100- (memavail / memtotal * 100))) }' /proc/meminfo)"
-        echo "mem  ${rampercent}%  |  $line" || exit 1
+        rampercent="$(awk '/MemTotal/ {memtotal=$2}; /MemAvailable/ {memavail=$2}; END { printf("%02.0f", (100- (memavail / memtotal * 100))) }' /proc/meminfo)"
+        ramremaining="$(awk '/MemTotal/ {memtotal=$2}; /MemAvailable/ {memavail=$2}; END { printf("%.2f", memavail / 1024 / 1024) }' /proc/meminfo)"
+        echo "mem  ${ramremaining} GB  |  $line" || exit 1
 done
