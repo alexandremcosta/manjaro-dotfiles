@@ -115,6 +115,7 @@ export BROWSER=/usr/bin/palemoon
 
 alias con='vim $HOME/.i3/config'
 alias vimrc='vim $HOME/.vimrc'
+alias bashrc='vim $HOME/.extend.bashrc'
 alias comp='vim $HOME/.config/compton.conf'
 alias fixit='sudo rm -f /var/lib/pacman/db.lck'
 alias inst='sudo pacman -S'
@@ -123,3 +124,7 @@ alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color
 alias mirrors='sudo pacman-mirrors -g'
 alias printer='system-config-printer'
 alias update='yaourt -Syua'
+alias search='grep -rnw . -e'
+alias agriweb='cd ~/Dev/d2s/agriweb'
+
+source ~/.dotfiles/git-completion.bash
