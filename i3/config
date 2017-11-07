@@ -67,7 +67,7 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf # conflicts with vim mode
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
@@ -355,7 +355,7 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	font pango:Noto Sans 11, FontAwesome 11
+	font pango:FontAwesome 13, Noto Sans 12
 	strip_workspace_numbers yes
 
 	colors {
@@ -448,7 +448,6 @@ mode "$mode_gaps_outer" {
 
 ## Keyboard shortcuts
 bindsym $mod+BackSpace exec flash_win
-bindsym $mod+g exec galculator
 bindsym $mod+p exec palemoon
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+Shift+Return exec terminal --working-directory=`xcwd`
