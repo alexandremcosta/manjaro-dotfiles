@@ -355,7 +355,7 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	font pango:FontAwesome 13, Noto Sans 12
+	font pango:FontAwesome 12, Noto Sans 11
 	strip_workspace_numbers yes
 
 	colors {
