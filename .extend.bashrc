@@ -128,3 +128,6 @@ alias search='grep -rnw . -e'
 alias agriweb='cd ~/Dev/d2s/agriweb'
 
 source ~/.dotfiles/git-completion.bash
+
+# Add RVM and other bin folders to PATH
+export PATH="$HOME/.bin:$HOME/.rvm/bin:$HOME/.npm-global/bin:$PATH"

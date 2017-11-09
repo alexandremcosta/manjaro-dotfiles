@@ -1,1 +1,1 @@
-export PATH=/home/ale/.npm-global/bin:/home/ale/.bin:$PATH
+export PATH="$HOME/.bin:$HOME/.rvm/bin:$HOME/.npm-global/bin:$PATH"
