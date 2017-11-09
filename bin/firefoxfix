@@ -1,0 +1,2 @@
+#!/bin/sh
+exec env GTK_THEME=Vertex-Maia:light /usr/lib/firefox/firefox "$@"
