@@ -113,20 +113,7 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 # fix "xdg-open fork-bomb" export your preferred browser from here
 export BROWSER=/usr/bin/firefox
 
-alias con='vim $HOME/.i3/config'
-alias vimrc='vim $HOME/.vimrc'
-alias bashrc='vim $HOME/.extend.bashrc'
-alias comp='vim $HOME/.config/compton.conf'
-alias fixit='sudo rm -f /var/lib/pacman/db.lck'
-alias inst='sudo pacman -S'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias mirrors='sudo pacman-mirrors -g'
-alias printer='system-config-printer'
-alias update='yaourt -Syua'
-alias search='grep -rnw . -e'
-alias agriweb='cd ~/Dev/d2s/agriweb'
-
+source ~/.dotfiles/alias
 source ~/.dotfiles/git-completion.bash
 
 # Add RVM and other bin folders to PATH
