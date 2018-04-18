@@ -447,6 +447,8 @@ mode "$mode_gaps_outer" {
 # bindsym $mod+Shift+ccedilla move right
 # bindsym $mod+ccedilla focus right
 
+exec --no-startup-id set_default_keyboard
+
 ## Keyboard shortcuts
 bindsym $mod+BackSpace exec flash_win
 bindsym $mod+p exec palemoon
