@@ -51,8 +51,8 @@ bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# bindsym XF86MonBrightnessUp exec "backlight-notify up"
+# bindsym XF86MonBrightnessDown exec "backlight-notify down"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -273,6 +273,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id set_screen
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
@@ -454,6 +455,7 @@ bindsym $mod+BackSpace exec flash_win
 bindsym $mod+p exec palemoon
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+Shift+Return exec terminal --working-directory=`xcwd`
+bindsym XF86Display exec "set_screen; nitrogen --restore; sleep 1; compton -b"
 
 ## Floating windows
 for_window [class="blueman-manager"] floating enable

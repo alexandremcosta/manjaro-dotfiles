@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# functions to switch from LVDS1 to VGA and vice versa
+function ActivateHDMI {
+    echo "Switching to HDMI1"
+    xrandr --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output LVDS1 --mode 1366x768 --pos 1920x312 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
+}
+
+function DeactivateHDMI {
+    echo "Switching to LVDS1"
+    xrandr --output HDMI1 --off --output LVDS1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
+}
+
+function HDMIConnected {
+    ! xrandr | grep "^HDMI1" | grep disconnected
+}
+
+# actual script
+if HDMIConnected
+then
+ActivateHDMI
+fi
+
+if ! HDMIConnected
+then
+DeactivateHDMI
+fi
