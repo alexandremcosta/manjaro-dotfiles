@@ -451,6 +451,7 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id set_default_keyboard
 
 ## Keyboard shortcuts
+bindsym Ctrl+Shift+1 exec set_default_keyboard
 bindsym $mod+BackSpace exec flash_win
 bindsym $mod+p exec palemoon
 bindsym $mod+Shift+p exec pcmanfm
@@ -462,4 +463,9 @@ for_window [class="blueman-manager"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="Pcmanfm"] floating enable
 for_window [class="Whatsie"] floating enable
+
+# VAIO only: do NOT add to git
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec "backlight-notify up"
+bindsym XF86MonBrightnessDown exec "backlight-notify down"
 
