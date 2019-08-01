@@ -29,6 +29,10 @@ match_lhs=""
 	&& match_lhs=$(dircolors --print-database)
 [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
 
+function git_branch {
+  [ -d .git ] && echo -n " :: " && git branch | grep \* | cut -d ' ' -f2
+}
+
 if ${use_color} ; then
 	# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
 	if type -P dircolors >/dev/null ; then
@@ -40,9 +44,9 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\]'
+		PS1='\[\033[01;31m\][\h\[\033[00;36m\] \W\[\033[01;31m\]] ->\[\033[00m\]'
 	else
-		PS1='\[\033[01;36m\][\u@\h\[\033[01;37m\] \W\[\033[00;37m\]$(__git_ps1)\[\033[01;36m\]]\$\[\033[00m\] '
+		PS1='\[\033[00;34m\]\u@\h\[\033[01;36m\] \W\[\033[00;34m\]$(git_branch)\[\033[01;34m\] ->\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -110,9 +114,13 @@ ex ()
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 export BROWSER=/usr/bin/firefox
 export VISUAL=/usr/bin/vim
+export EDITOR=/usr/bin/vim
 export ANDROID_HOME=/opt/android-sdk
 export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/.bin:$HOME/.rvm/bin:$HOME/.npm-global/bin:$PATH"
+export ERL_AFLAGS="-kernel shell_history enabled" # iex history
 
 source ~/.dotfiles/alias
 source ~/.dotfiles/git-completion.bash
 
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
