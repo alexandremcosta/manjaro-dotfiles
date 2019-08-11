@@ -29,13 +29,12 @@ ex ()
   fi
 }
 
+source ~/.dotfiles/git-completion.bash
 function git_branch {
   [ -d .git ] && echo -n " :: " && git branch | grep \* | cut -d ' ' -f2
 }
 
 PS1='\[\033[00;34m\]\u\[\033[01;36m\] \W\[\033[00;34m\]$(git_branch)\[\033[01;34m\] ->\[\033[00m\] '
-
-source ~/.dotfiles/git-completion.bash
 
 export PATH="$HOME/.bin:$PATH"
 export VISUAL=/usr/bin/vim

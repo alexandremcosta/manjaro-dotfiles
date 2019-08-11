@@ -10,6 +10,6 @@
 	pl = pull --rebase
 	ch = checkout
 	st = status
-	lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
 [core]
 	excludesfile = ~/.gitignore
