@@ -40,6 +40,3 @@ export PATH="$HOME/.bin:$PATH"
 export VISUAL=/usr/bin/vim
 export EDITOR=/usr/bin/vim
 export ERL_AFLAGS="-kernel shell_history enabled" # iex history
-
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
