@@ -1,0 +1,46 @@
+alias ..='cd ..'
+alias search='grep -rnw . --exclude-dir={.git,log,node_modules,tmp,_build,deps,rel} -e'
+alias findfile='find . -name'
+alias bashprofile='vim $HOME/.bash_profile'
+alias vimrc='vim $HOME/.vimrc'
+alias la='ls -Gla' # color, hidden files and more complete info
+alias ll='ls -Gl'  # color and complete info
+alias ls_largest='find . -type f -print0 | xargs -0 du -h | sort -hr | head -20'
+alias youtubemp3='youtube-dl --extract-audio --audio-format mp3'
+alias cp="cp -i" # confirm before overwriting something
+alias df='df -h' # human-readable sizes
+
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.rar)       unrar x $1   ;;
+      *.zip)       unzip $1     ;;
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.Z)         uncompress $1;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+function git_branch {
+  [ -d .git ] && echo -n " :: " && git branch | grep \* | cut -d ' ' -f2
+}
+
+PS1='\[\033[00;34m\]\u\[\033[01;36m\] \W\[\033[00;34m\]$(git_branch)\[\033[01;34m\] ->\[\033[00m\] '
+
+source ~/.dotfiles/git-completion.bash
+
+export PATH="$HOME/.bin:$PATH"
+export VISUAL=/usr/bin/vim
+export EDITOR=/usr/bin/vim
+export ERL_AFLAGS="-kernel shell_history enabled" # iex history
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
