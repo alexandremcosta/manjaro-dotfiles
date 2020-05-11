@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sed -i 's/colorscheme gruvbox/colorscheme github/g' ~/.vim/vimrc
+sed -i 's/set background=dark/set background=light/g' ~/.vim/vimrc
+
+dconf write /org/mate/terminal/profiles/default/use-theme-colors false
