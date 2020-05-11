@@ -1,2 +1,5 @@
+.DS_Store
 *.swp
 .tool-versions
+.elixir_ls/
+.vscode/
