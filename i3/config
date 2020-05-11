@@ -471,3 +471,4 @@ exec --no-startup-id sleep 0.5 && /home/ale/.screenlayout/hidpi.sh
 exec --no-startup-id sleep 1 && nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id sleep 1 && conky -c /usr/share/conky/conky_solarized
 
+bindsym $mod+space exec --no-startup-id dmenu_recency
